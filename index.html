@@ -5,9 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Geographator</title>
-    <link rel="stylesheet">
-	<script src="scripts/liste.js" defer></script>
-    <script src="scripts/script.js" defer></script>
 	<link rel="stylesheet" href="style/style.css"></link>
 </head>
 <body>
@@ -17,36 +14,21 @@
     </header>
 	
     <main>
-        <div id="zoneOptions">
-           
+        <div>
+        Sélectionner un mode de jeu
         </div>
-
-        <div id="zoneProposition">
-		Quelle est la capitale du pays suivant :
-        </div>
-		
-		<div id="zoneQuestion">
-		pays
-		</div>
-
-        <div id="zoneSaisie">
-            <input type="text" id="inputEcriture" name="inputEcriture">
-            <button id="btnValiderMot">Valider</button>
-			<button id="btnRejouer">Rejouer</button>
-        </div>
-
-		<div id="zoneReponsePrecedente">
 		<br>
-		</div>
+		<div >
+			<ul id="choixModeDeJeu">
+		<li><button><a href="indexCapitale.html">Deviner les capitales</a></button></li>
 		<br>
-        <div id="zoneScore">
-        Votre score : <span id="affichageScore">0</span>
-        </div>
-       
+		<li><button><a href="indexPays.html">Deviner les pays</a></button></li>
+			</ul>
+		</div>
     </main>
 
     <footer>
-        Créé par YK
+	Geographator 2024
     </footer>
 
 </body>
