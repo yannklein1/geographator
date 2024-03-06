@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geographator</title>
+    <link rel="stylesheet">
+	<script src="scripts/liste.js" defer></script>
+    <script src="scripts/scriptCapitale.js" defer></script>
+	<link rel="stylesheet" href="style/style.css"></link>
+</head>
+<body>
+    <header>
+        <h1>Geographator</h1>
+        <h2>L'application pour apprendre les capitales !</h2>
+    </header>
+	
+    <main>
+        <div id="zoneOptions">
+           
+        </div>
+
+        <div id="zoneProposition">
+		Quelle est la capitale du pays suivant :
+        </div>
+		
+		<div id="zoneQuestion">
+		pays
+		</div>
+
+        <div id="zoneSaisie">
+            <input type="text" id="inputEcriture" name="inputEcriture">
+            <button id="btnValiderMot">Valider</button>
+			<button id="btnRejouer">Rejouer</button>
+        </div>
+
+		<div id="zoneReponsePrecedente">
+		<br>
+		</div>
+		<br>
+        <div id="zoneScore">
+        Votre score : <span id="affichageScore">0</span>
+        </div>
+		
+		<br>
+		<div id="zoneRetourMenu">
+		<button id="btnRetourMenu"><a href="index.html">Retour au menu</a></button>
+		</div>
+       
+    </main>
+
+    <footer>
+	Geographator 2024
+    </footer>
+
+</body>
+</html>
