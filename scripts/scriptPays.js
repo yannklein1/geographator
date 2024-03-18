@@ -1,5 +1,6 @@
 let btnValiderMot = document.getElementById("btnValiderMot")
 let btnRejouer = document.getElementById("btnRejouer")
+let listeNombreAleatoires = []
 
 function initialisation () {
 	btnValiderMot.style.display = "block";
@@ -7,7 +8,9 @@ function initialisation () {
 	btnValiderMot.innerHTML = "Valider";
 	i = 0;
 	score = 0;
-	nombreAleatoire = Math.floor(Math.random()*(listePaysCapitales.length + 1));
+	nombreAleatoire = Math.floor(Math.random()*(listePaysCapitales.length));
+	listeNombreAleatoires.push(nombreAleatoire);
+	console.log(listeNombreAleatoires)
 	inputEcriture.disabled = false;
 	zoneQuestion.innerHTML = listePaysCapitales[nombreAleatoire].capitale
 	affichageScore.innerHTML = score + " / " + i
@@ -35,8 +38,13 @@ function processJeu () {
 	if (i === 10) {
         finJeu();
     } else {
-	nombreAleatoire = Math.floor(Math.random()*(listePaysCapitales.length))
-	affichageScore.innerHTML = score + " / " + i 
+	nombreAleatoire = Math.floor(Math.random()*(listePaysCapitales.length));
+	if (listeNombreAleatoires.includes(nombreAleatoire)===true) 
+		{nombreAleatoire = Math.floor(Math.random()*(listePaysCapitales.length));} 
+		else {};
+	listeNombreAleatoires.push(nombreAleatoire);
+	console.log(listeNombreAleatoires);
+	affichageScore.innerHTML = score + " / " + i ;
 	modificationCapitale ()
 	}
 }
@@ -66,6 +74,7 @@ function affichageMauvaiseReponse () {
 }
 
 function finJeu() {
+	listeNombreAleatoires = [];
 	affichageScore.innerHTML = score + " / " + i ;
 	inputEcriture.disabled = true;
 	zoneProposition.innerHTML = "";
