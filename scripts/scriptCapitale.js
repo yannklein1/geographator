@@ -1,5 +1,11 @@
 let btnValiderMot = document.getElementById("btnValiderMot")
 let btnRejouer = document.getElementById("btnRejouer")
+let listeNombresAleatoires = []
+let nombreAleatoire = Math.floor(Math.random()*(listePaysCapitales.length))
+
+function melange () {
+	nombreAleatoire = Math.floor(Math.random()*(listePaysCapitales.length))
+}
 
 function initialisation () {
 	btnValiderMot.style.display = "block";
@@ -7,7 +13,9 @@ function initialisation () {
 	btnValiderMot.innerHTML = "Valider";
 	i = 0;
 	score = 0;
-	nombreAleatoire = Math.floor(Math.random()*(listePaysCapitales.length + 1));
+	melange ();
+	listeNombresAleatoires.push(nombreAleatoire);
+	console.log(listeNombresAleatoires);
 	inputEcriture.disabled = false;
 	zoneQuestion.innerHTML = listePaysCapitales[nombreAleatoire].pays
 	affichageScore.innerHTML = score + " / " + i
@@ -16,8 +24,6 @@ function initialisation () {
 function lancerJeu () {
 	initialisation()
 
-	
-	
 	//boucle
 	btnValiderMot.addEventListener("click", () => {
 		processJeu ()
@@ -37,7 +43,9 @@ function processJeu () {
 	if (i === 10) {
         finJeu();
     } else {
-	nombreAleatoire = Math.floor(Math.random()*(listePaysCapitales.length))
+	do {melange ()} while (listeNombresAleatoires.includes(nombreAleatoire)===true)
+	listeNombresAleatoires.push(nombreAleatoire);
+	console.log(listeNombresAleatoires);
 	affichageScore.innerHTML = score + " / " + i 
 	modificationPays ()
 	}
