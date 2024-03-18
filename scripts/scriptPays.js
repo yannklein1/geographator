@@ -56,7 +56,7 @@ function modificationCapitale () {
 }
 
 function calculScore () {
-	let reponseUtilisateur = inputEcriture.value.toLowerCase()
+	let reponseUtilisateur = inputEcriture.value.toLowerCase().trim()
 	let bonneReponse = listePaysCapitales[nombreAleatoire].pays.toLowerCase()
 	if 	(reponseUtilisateur === bonneReponse){
 	score++;
