@@ -1,6 +1,11 @@
 let btnValiderMot = document.getElementById("btnValiderMot")
 let btnRejouer = document.getElementById("btnRejouer")
-let listeNombreAleatoires = []
+let listeNombresAleatoires = []
+let nombreAleatoire = Math.floor(Math.random()*(listePaysCapitales.length))
+
+function melange () {
+	nombreAleatoire = Math.floor(Math.random()*(listePaysCapitales.length))
+}
 
 function initialisation () {
 	btnValiderMot.style.display = "block";
@@ -8,9 +13,9 @@ function initialisation () {
 	btnValiderMot.innerHTML = "Valider";
 	i = 0;
 	score = 0;
-	nombreAleatoire = Math.floor(Math.random()*(listePaysCapitales.length));
-	listeNombreAleatoires.push(nombreAleatoire);
-	console.log(listeNombreAleatoires)
+	melange ();
+	listeNombresAleatoires.push(nombreAleatoire);
+	console.log(listeNombresAleatoires)
 	inputEcriture.disabled = false;
 	zoneQuestion.innerHTML = listePaysCapitales[nombreAleatoire].capitale
 	affichageScore.innerHTML = score + " / " + i
@@ -38,12 +43,9 @@ function processJeu () {
 	if (i === 10) {
         finJeu();
     } else {
-	nombreAleatoire = Math.floor(Math.random()*(listePaysCapitales.length));
-	if (listeNombreAleatoires.includes(nombreAleatoire)===true) 
-		{nombreAleatoire = Math.floor(Math.random()*(listePaysCapitales.length));} 
-		else {};
-	listeNombreAleatoires.push(nombreAleatoire);
-	console.log(listeNombreAleatoires);
+	do {melange ()} while (listeNombresAleatoires.includes(nombreAleatoire)===true)
+	listeNombresAleatoires.push(nombreAleatoire);
+	console.log(listeNombresAleatoires);
 	affichageScore.innerHTML = score + " / " + i ;
 	modificationCapitale ()
 	}
@@ -74,7 +76,7 @@ function affichageMauvaiseReponse () {
 }
 
 function finJeu() {
-	listeNombreAleatoires = [];
+	listeNombresAleatoires = [];
 	affichageScore.innerHTML = score + " / " + i ;
 	inputEcriture.disabled = true;
 	zoneProposition.innerHTML = "";
