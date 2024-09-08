@@ -1,10 +1,10 @@
 let btnValiderMot = document.getElementById("btnValiderMot")
 let btnRejouer = document.getElementById("btnRejouer")
 let listeNombresAleatoires = []
-let nombreAleatoire = Math.floor(Math.random()*(listePaysCapitales.length))
+let nombreAleatoire = Math.floor(Math.random()*(listePaysCapitalesEurope.length))
 
 function melange () {
-	nombreAleatoire = Math.floor(Math.random()*(listePaysCapitales.length))
+	nombreAleatoire = Math.floor(Math.random()*(listePaysCapitalesEurope.length))
 }
 
 function initialisation () {
@@ -17,7 +17,7 @@ function initialisation () {
 	listeNombresAleatoires.push(nombreAleatoire);
 	console.log(listeNombresAleatoires)
 	inputEcriture.disabled = false;
-	zoneQuestion.innerHTML = listePaysCapitales[nombreAleatoire].capitale
+	zoneQuestion.innerHTML = listePaysCapitalesEurope[nombreAleatoire].capitale
 	affichageScore.innerHTML = score + " / " + i
 }
 
@@ -40,24 +40,24 @@ function processJeu () {
 	calculScore()
 	inputEcriture.value = ""
 	i++
-	if (i === 10) {
+	if (i === 20) {
         finJeu();
     } else {
 	do {melange ()} while (listeNombresAleatoires.includes(nombreAleatoire)===true)
 	listeNombresAleatoires.push(nombreAleatoire);
 	console.log(listeNombresAleatoires);
-	affichageScore.innerHTML = score + " / " + i ;
+	affichageScore.innerHTML = score + " / " + i 
 	modificationCapitale ()
 	}
 }
 
 function modificationCapitale () {
-	zoneQuestion.innerHTML = listePaysCapitales[nombreAleatoire].capitale
+	zoneQuestion.innerHTML = listePaysCapitalesEurope[nombreAleatoire].capitale
 }
 
 function calculScore () {
 	let reponseUtilisateur = inputEcriture.value.toLowerCase().trim()
-	let bonneReponse = listePaysCapitales[nombreAleatoire].pays.toLowerCase()
+	let bonneReponse = listePaysCapitalesEurope[nombreAleatoire].pays.toLowerCase()
 	if 	(reponseUtilisateur === bonneReponse){
 	score++;
 	affichageScore.innerHTML = score + " / " + i;
@@ -72,11 +72,10 @@ function affichageBonneReponse () {
 }
 
 function affichageMauvaiseReponse () {
-	zoneReponsePrecedente.innerHTML = "Mauvaise réponse, la réponse était " + listePaysCapitales[nombreAleatoire].pays
+	zoneReponsePrecedente.innerHTML = "Mauvaise réponse, la réponse était " + listePaysCapitalesEurope[nombreAleatoire].pays
 }
 
 function finJeu() {
-	listeNombresAleatoires = [];
 	affichageScore.innerHTML = score + " / " + i ;
 	inputEcriture.disabled = true;
 	zoneProposition.innerHTML = "";
