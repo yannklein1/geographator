@@ -39,7 +39,6 @@ h3 {
     color: var(--color-secondary);
 }
 
-/* Mise en forme des formulaires */
 input[type='text'],
 input[type='email'] {
     width: 100%;
@@ -122,12 +121,30 @@ footer {
     bottom: 0;
     display: flex;
     justify-content: center;
-    width: 100%;
-    padding: 30px;
+    width: 15%;
+    padding: 10px;
     font-weight: 600;
     font-size: 17px;
     color: white;
     background-color: var(--color-secondary);
+	margin-right: 80%;
+	margin-left: 10%;
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+}
+
+footer2 {
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    width: 15%;
+    padding: 2px;
+    font-weight: 300;
+    font-size: 12px;
+    color: white;
+    background-color: var(--color-secondary);
+	margin-right: 80%;
+	margin-left: 10%;
 }
 
 /**
@@ -156,6 +173,11 @@ footer {
     font-size: 30px;
     font-weight: 600;
     color: var(--color-primary);
+}
+
+#selectionModeDeJeu {
+font-size: 40px;
+font-weight: 600;
 }
 
 /* Zone de saisie */
@@ -280,3 +302,4 @@ button a {
         padding: 10px;
     }
 }
+
