@@ -159,7 +159,7 @@ const listePaysCapitalesAsie = [
 {pays: "Yémen", capitale: "Sanaa"},
 ]
 
-const listePaysCapitalesAmériqueNordCentrale = [
+const listePaysCapitalesAmeriqueNordCentrale = [
 {pays: "Antigua et Barbuda", capitale: "Saint John’s"},
 {pays: "Bahamas", capitale: "Nassau"},
 {pays: "Barbade", capitale: "Bridgetown"},
@@ -184,3 +184,40 @@ const listePaysCapitalesAmériqueNordCentrale = [
 {pays: "Salvador", capitale: "San Salvador"},
 {pays: "Trinidad et Tobago", capitale: "Port-d’Espagne"},
 ]
+
+const listePaysCapitalesAmeriqueSud = [
+{pays: "Argentine", capitale: "Buenos Aires"},
+{pays: "Bolivie", capitale: "La Paz"},
+{pays: "Brésil", capitale: "Brasília"},
+{pays: "Chili", capitale: "Santiago du Chili"},
+{pays: "Colombie", capitale: "Bogotá"},
+{pays: "Équateur", capitale: "Quito"},
+{pays: "Paraguay", capitale: "Asunción"},
+{pays: "Pérou", capitale: "Lima"},
+{pays: "Suriname", capitale: "Suriname"},
+{pays: "Uruguay", capitale: "Montevideo"},
+{pays: "Venezuela", capitale: "Caracas"},
+]
+
+const listePaysCapitalesAmerique = [...listePaysCapitalesAmeriqueNordCentrale, ...listePaysCapitalesAmeriqueSud]
+
+const listePaysCapitalesOceanie = [
+{pays: "Australie", capitale: "Canberra"},
+{pays: "Fidji", capitale: "Suva"},
+{pays: "Iles Cook", capitale: "Avarua"},
+{pays: "Iles Marshall", capitale: "Majuro"},
+{pays: "Iles Salomon", capitale: "Honiara"},
+{pays: "Kiribati", capitale: "Tarawa-Sud"},
+{pays: "Micronésie", capitale: "Palikir"},
+{pays: "Nauru", capitale: "District de Yaren"},
+{pays: "Nouvelle-Zélande", capitale: "Wellington"},
+{pays: "Niue", capitale: "Alofi"},
+{pays: "Palaos", capitale: "Melekeok"},
+{pays: "Papouasie-Nouvelle Guinée", capitale: "Port Moresby"},
+{pays: "Samoa", capitale: "Apia"},
+{pays: "Tonga", capitale: "Nuku’alofa"},
+{pays: "Tuvalu", capitale: "Funafuti"},
+{pays: "Vanuatu", capitale: "Port-Vila"},
+]
+
+const listePaysCapitalesMonde = [...listePaysCapitalesEurope, ...listePaysCapitalesAfrique, ...listePaysCapitalesAsie, ...listePaysCapitalesAmerique, ...listePaysCapitalesOceanie]
