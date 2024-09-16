@@ -57,9 +57,13 @@ function modificationPays () {
 	zoneQuestion.innerHTML = listePaysCapitalesAfrique[nombreAleatoire].pays
 }
 
+function suppressionAccents(str) {
+    return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+}
+
 function calculScore () {
-	let reponseUtilisateur = inputEcriture.value.toLowerCase().trim()
-	let bonneReponse = listePaysCapitalesAfrique[nombreAleatoire].capitale.toLowerCase()
+	let reponseUtilisateur = suppressionAccents(inputEcriture.value.toLowerCase().trim())
+	let bonneReponse = suppressionAccents(listePaysCapitalesAfrique[nombreAleatoire].capitale.toLowerCase())
 	if 	(reponseUtilisateur === bonneReponse){
 	score++;
 	affichageScore.innerHTML = score + " / " + i;
